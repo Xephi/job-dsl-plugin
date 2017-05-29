@@ -287,4 +287,14 @@ class ColumnsContext extends AbstractExtensibleContext {
     void scmType() {
         columnNodes << new Node(null, 'jenkins.plugins.extracolumns.SCMTypeColumn')
     }
+
+    /**
+     * Adds a column showing a button for scheduling a future build
+     *
+     * @since 1.64
+     */
+    @RequiresPlugin(id = 'schedule-build')
+    void scheduleBuild() {
+        columnNodes << new Node(null, 'org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn')
+    }
 }
